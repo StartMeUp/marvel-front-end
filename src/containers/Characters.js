@@ -20,7 +20,7 @@ const Characters = () => {
         setCharacters(response.data);
         setIsLoading(false);
       } catch (error) {
-        console.log(error.message);
+        console.log(error.response);
       }
     };
     fetchData();
