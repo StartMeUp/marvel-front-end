@@ -16,6 +16,7 @@
 
 main {
   flex-grow: 1;
+  background: white url("./assets/images/marvel-bg.jpg") top/contain repeat-y;
 }
 
 body {
@@ -57,6 +58,7 @@ a {
   max-width: 1200px;
   padding: 30px 10px;
   margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .flex-center {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ItemGrid from "../components/ItemGrid";
 import Loader from "react-loader-spinner";
 import axios from "axios";
+//import charactersData from "../assets/data/characters.json";
 
 const Characters = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -12,10 +13,9 @@ const Characters = () => {
       const response = await axios.get(
         "https://marvel-backend-smu.herokuapp.com/characters"
       );
-      console.log("response.data.result =>", response.data.results);
-      const newCharacters = response.data.results;
-      console.log("newCharacters =>", newCharacters);
-      setCharacters(newCharacters);
+      //console.log("response.data.result =>", response.data.results);
+      setCharacters(response.data.results);
+      setIsLoading(false);
     } catch (error) {
       console.log(error.message);
     }
@@ -23,7 +23,6 @@ const Characters = () => {
 
   useEffect(() => {
     fetchData();
-    setIsLoading(false);
   }, []);
 
   return isLoading ? (
@@ -36,8 +35,7 @@ const Characters = () => {
     <main>
       <div className="container">
         <h1>Characters</h1>
-        {characters[0].name}
-        {/* <ItemGrid endpoint={characters} /> */}
+        <ItemGrid endpoint={characters} />
       </div>
     </main>
   );

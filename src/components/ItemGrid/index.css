@@ -1,14 +1,44 @@
 .grid-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-  grid-gap: 1rem;
+  grid-gap: 1.2rem;
 }
 
 .grid-item-card {
+}
+
+.grid-item-card img {
 }
 
 .item-description-layer {
 }
 
 .item-description {
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  position: relative; /* If you want text inside of it */
+  background-position: left bottom;
+  background-size: cover;
+}
+
+.item-description > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(230, 36, 41, 0.75);
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  transition: opacity 0.4s, visibility 0.6s;
+  padding: 20px;
+}
+.item-description:hover > div {
+  visibility: visible;
+  opacity: 1;
 }
