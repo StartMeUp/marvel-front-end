@@ -4,19 +4,9 @@
   grid-gap: 1.2rem;
 }
 
-.grid-item-card {
-}
-
-.grid-item-card img {
-}
-
-.item-description-layer {
-}
-
 .item-description {
   width: 100%;
-  padding-top: 100%; /* 1:1 Aspect Ratio */
-  position: relative; /* If you want text inside of it */
+  position: relative;
   background-position: left bottom;
   background-size: cover;
 }
@@ -37,6 +27,7 @@
   flex-direction: column;
   transition: opacity 0.4s, visibility 0.6s;
   padding: 20px;
+  overflow: hidden;
 }
 .item-description:hover > div {
   visibility: visible;

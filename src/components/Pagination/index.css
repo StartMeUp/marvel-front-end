@@ -1,0 +1,15 @@
+#pagination ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#pagination li {
+  padding: 8px 12px;
+  color: white;
+  background-color: #e62429;
+  margin: 6px;
+}
+
+#pagination li:hover {
+  cursor: pointer;
+}

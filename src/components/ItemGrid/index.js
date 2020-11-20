@@ -7,7 +7,10 @@ const ItemGrid = ({ endpoint }) => {
     <div className="grid-wrapper">
       {endpoint.map((item) => {
         return (
-          <Link to={`/characters/${item.id}`} key={item.id}>
+          <Link
+            to={item.name ? `/characters/${item.id}` : `/comics/${item.id}`}
+            key={item.id}
+          >
             <div className="grid-item-card">
               <div
                 className="item-description"
@@ -15,6 +18,7 @@ const ItemGrid = ({ endpoint }) => {
                   backgroundImage: `url(${
                     item.thumbnail.path + "." + item.thumbnail.extension
                   })`,
+                  paddingTop: item.name ? "100%" : "154%",
                 }}
               >
                 <div>

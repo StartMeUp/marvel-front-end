@@ -1,0 +1,16 @@
+#simple-pagination button {
+  background-color: #e62429;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 6px 12px;
+  margin: 0 12px;
+}
+
+#simple-pagination button:hover {
+  cursor: pointer;
+}
+
+#simple-pagination {
+  text-align: center;
+}
