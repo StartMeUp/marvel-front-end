@@ -79,6 +79,10 @@ a {
   max-width: 600px;
 }
 
+.item-details > div > p {
+  margin-bottom: 30px;
+}
+
 .item-details img {
   width: 100%;
   max-width: 520px;

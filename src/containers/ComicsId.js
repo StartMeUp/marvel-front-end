@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import FavButton from "../components/FavButton";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 
-const ComicsId = () => {
+const ComicsId = ({ userFavs, manageFavs }) => {
   const params = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [comic, setComic] = useState();
@@ -41,6 +42,11 @@ const ComicsId = () => {
             ) : (
               <p>No description</p>
             )}
+            <FavButton
+              id={comic.id}
+              manageFavs={manageFavs}
+              userFavs={userFavs}
+            />
           </div>
         </div>
       </div>

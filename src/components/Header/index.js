@@ -10,7 +10,6 @@ const Header = () => {
       <nav>
         <Link to="/">Characters</Link>
         <Link to="/comics">Comics</Link>
-        <Link to="/favs">Favs</Link>
       </nav>
     </header>
   );

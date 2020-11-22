@@ -5,7 +5,7 @@ import Loader from "react-loader-spinner";
 import axios from "axios";
 //import charactersData from "../assets/data/characters.json";
 
-const Characters = () => {
+const Characters = ({ userFavs, manageFavs }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
   const [offset, setOffset] = useState(0);
@@ -36,7 +36,11 @@ const Characters = () => {
     <main>
       <div className="container">
         <h1>Characters</h1>
-        <ItemGrid endpoint={characters.results} />
+        <ItemGrid
+          endpoint={characters.results}
+          manageFavs={manageFavs}
+          userFavs={userFavs}
+        />
         <Pagination
           offset={offset}
           setOffset={setOffset}

@@ -4,7 +4,7 @@ import SimplePagination from "../components/SimplePagination";
 import Loader from "react-loader-spinner";
 import axios from "axios";
 
-const Comics = () => {
+const Comics = ({ userFavs, manageFavs }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [comics, setComics] = useState([]);
   const [offset, setOffset] = useState(0);
@@ -35,7 +35,11 @@ const Comics = () => {
     <main>
       <div className="container">
         <h1>Comics</h1>
-        <ItemGrid endpoint={comics} />
+        <ItemGrid
+          endpoint={comics}
+          manageFavs={manageFavs}
+          userFavs={userFavs}
+        />
         <SimplePagination
           offset={offset}
           setOffset={setOffset}

@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemGrid from "../components/ItemGrid";
+import FavButton from "../components/FavButton";
 import SimplePagination from "../components/SimplePagination";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 
-const CharactersId = () => {
+const CharactersId = ({ userFavs, manageFavs }) => {
+  // console.log("userFavs =>", userFavs);
+  // console.log("manageFavs =>", manageFavs);
   const params = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [character, setcharacter] = useState({});
@@ -49,10 +52,19 @@ const CharactersId = () => {
             ) : (
               <p>{character.description}</p>
             )}
+            <FavButton
+              id={character.id}
+              manageFavs={manageFavs}
+              userFavs={userFavs}
+            />
           </div>
         </div>
         <h2>Featured in :</h2>
-        <ItemGrid endpoint={comics} />
+        <ItemGrid
+          endpoint={comics}
+          manageFavs={manageFavs}
+          userFavs={userFavs}
+        />
         {comics.length >= 100 && (
           <SimplePagination
             offset={offset}
