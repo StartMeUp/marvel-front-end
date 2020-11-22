@@ -16,7 +16,7 @@
 
 main {
   flex-grow: 1;
-  background: white url("./assets/images/marvel-bg.jpg") top/contain repeat-y;
+  background: white url("./assets/images/marvel-bg.jpg") top/contain repeat;
 }
 
 body {
@@ -87,4 +87,16 @@ a {
   width: 100%;
   max-width: 520px;
   margin: 0 20px 20px 0;
+}
+
+.title-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.title-search h1 {
+  flex: 3;
 }

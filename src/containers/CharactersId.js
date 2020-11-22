@@ -48,9 +48,9 @@ const CharactersId = ({ userFavs, manageFavs }) => {
           <div>
             <h1>{character.name}</h1>
             {character.description ? (
-              <p>No description</p>
-            ) : (
               <p>{character.description}</p>
+            ) : (
+              <p>No description</p>
             )}
             <FavButton
               id={character.id}

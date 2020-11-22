@@ -19,9 +19,11 @@ const ItemGrid = ({ endpoint, userFavs, manageFavs }) => {
               }}
             >
               <div>
-                <p className={item.description ? undefined : "hidden"}>
-                  {item.description}
-                </p>
+                {item.description ? (
+                  <p>{item.description.substr(0, 200) + " ..."}</p>
+                ) : (
+                  <p>No description</p>
+                )}
                 <FavButton
                   id={item.id}
                   manageFavs={manageFavs}
